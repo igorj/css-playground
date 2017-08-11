@@ -1,16 +1,32 @@
 ---
 layout: post
-title: Generate content with CSS
+title: Generate content with :before and :after
 ---
 
-<p>Generate content with CSS</p>
+<h2>CSS Triangle</h2>
 
-{% highlight ruby %}
-def show
-@widget = Widget(params[:id])
-respond_to do |format|
-format.html # show.html.erb
-format.json { render json: @widget }
-end
-end
+<div class="box">This is a comment</div>
+
+<p>The trick here is to add content with :before or :after that has height and width of 0, solid transparent border of some width and border-top-color with the same color as the box.
+  In addition this generated content is positioned absolutely. Here is the code:</p>
+
+{% highlight sass %}
+.box
+background-color: #40a728
+color: white
+font-weight: bold
+margin: 2em
+padding: 1em
+border-radius: 5px
+position: relative
+
+&:after
+content: ""
+position: absolute
+bottom: -19px
+left: 20px
+width: 0
+height: 0
+border: 10px solid transparent
+border-top-color: #40a728
 {% endhighlight %}
