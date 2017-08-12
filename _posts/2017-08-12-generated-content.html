@@ -1,6 +1,8 @@
 ---
-layout: post
 title: Generate content with :before and :after
+sass:
+  - generated.sass
+  - quotes.sass
 ---
 
 <h2>CSS Triangle</h2>
@@ -11,22 +13,13 @@ title: Generate content with :before and :after
   In addition this generated content is positioned absolutely. Here is the code:</p>
 
 {% highlight sass %}
-.box
-background-color: #40a728
-color: white
-font-weight: bold
-margin: 2em
-padding: 1em
-border-radius: 5px
-position: relative
+{% include generated.sass %}
+{% endhighlight %}
 
-&:after
-content: ""
-position: absolute
-bottom: -19px
-left: 20px
-width: 0
-height: 0
-border: 10px solid transparent
-border-top-color: #40a728
+<h2>CSS Quotes</h2>
+
+<blockquote>This is a quote by some very famous person</blockquote>
+
+{% highlight sass %}
+{% include quotes.sass %}
 {% endhighlight %}
