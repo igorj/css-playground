@@ -2,3 +2,4 @@ theme: jekyll-theme-merlot
 title: CSS3 Experiments
 description: Some CSS3 experiments for learning purpose
 show_downloads: false
+permalink: /:title
